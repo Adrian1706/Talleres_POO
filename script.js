@@ -4,8 +4,17 @@ class persona {
         this.edad=edad;
         this.sexo=sexo;
     }
-    saludo(){
+    get getEdad(){
+        return this.edad;
+    }
+    set setEdad(edad){
+        this.edad=edad
+    }
+    saludar(){
         return this.nombre;
+    }
+    static mayorEdad(edad){
+        return edad<18 ? "Menor" : "Mayor"
     }
 }
 class estudiante extends persona{
@@ -13,8 +22,11 @@ class estudiante extends persona{
         super(nombre, edad, sexo)
         this.carrera=carrera
     }
-    saludoEstudiante(){
-        return super.saludo() + " estudia " + this.carrera
+    estudiar(){
+        return super.saludar() + " estudia " + this.carrera
+    }
+    static mayorEdad(edad){
+        return edad<18 ? "Menor" : "Mayor"
     }
 }
 const boton=document.querySelector("#saludar");
@@ -27,5 +39,6 @@ function saludar(){
     
     
     let person = new estudiante (nombre, edad, sexo, materia);
-    document.getElementById("saludo").innerHTML =`<p style="background-color:white; margin-top: 20px; margin-left:200px; width:200px; text-align:center">${person.saludoEstudiante()}</p>`
+    document.getElementById("saludo").innerHTML =`<p style="background-color:white; margin-top: 20px; margin-left:200px; width:200px; text-align:center">${person.estudiar()}</p>
+    <p style="background-color:white; margin-left:200px; width:200px; text-align:center">${estudiante.mayorEdad(person.getEdad)}</p>`
 }
