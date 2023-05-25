@@ -1,44 +1,29 @@
-class persona {
-    constructor(nombre, edad, sexo){
-        this.nombre=nombre;
-        this.edad=edad;
-        this.sexo=sexo;
-    }
-    get getEdad(){
-        return this.edad;
-    }
-    set setEdad(edad){
+class animal{
+    constructor(nombre, edad){
+        this.nombre=nombre
         this.edad=edad
     }
-    saludar(){
-        return this.nombre;
-    }
-    static mayorEdad(edad){
-        return edad<18 ? "Menor" : "Mayor"
+    hacerSonido(){
+        return this.nombre + " está haciendo un sonido"
     }
 }
-class estudiante extends persona{
-    constructor(nombre, edad, sexo, carrera){
-        super(nombre, edad, sexo)
-        this.carrera=carrera
+class perro extends animal {
+    constructor(nombre, edad, raza){
+        super(nombre, edad)
+        this.raza=raza
     }
-    estudiar(){
-        return super.saludar() + " estudia " + this.carrera
-    }
-    static mayorEdad(edad){
-        return edad<18 ? "Menor" : "Mayor"
+    moverCola(){
+        return this.nombre + " de raza " + this.raza + " está moviendo la cola"
     }
 }
-const boton=document.querySelector("#saludar");
-boton.addEventListener("click",saludar);
-function saludar(){
-    let nombre = document.getElementById("name").value;
-    let edad = document.getElementById("age").value;
-    let sexo = document.getElementById("sexo").value;
-    let materia = document.getElementById("materia").value;
-    
-    
-    let person = new estudiante (nombre, edad, sexo, materia);
-    document.getElementById("saludo").innerHTML =`<p style="background-color:white; margin-top: 20px; margin-left:200px; width:200px; text-align:center">${person.estudiar()}</p>
-    <p style="background-color:white; margin-left:200px; width:200px; text-align:center">${estudiante.mayorEdad(person.getEdad)}</p>`
-}
+const boton=document.querySelector("#sound");
+boton.addEventListener("click",function(e){
+    e.preventDefault()
+    let nombre=document.querySelector("#name").value;
+    let edad=document.querySelector("#age").value;
+    let raza=document.querySelector("#raza").value;
+    let pet = new perro(nombre, edad, raza); 
+    document.querySelector("#sonido").innerHTML=`
+    <p style="background-color:white; margin-top: 20px; margin-left:200px; width:200px; text-align:center">${pet.hacerSonido()}</p>
+    <p style="background-color:white; margin-left:200px; width:200px; text-align:center">${pet.moverCola()}</p>`
+});
