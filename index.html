@@ -18,28 +18,59 @@
                 <input class="form-control me-2" type="text" placeholder="Ingrese el area de la figura" id="area" style="text-align: center; margin-top: 10px;">
             </div>
         </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-12">
-                <select class="form-select form-select-lg" aria-label="Default select example" id="selec">
-                    <option selected>seleccione la figura</option>
-                    <option value="circulo">Circulo</option>
-                    <option value="rectangulo">Rectangulo</option>
-                </select>
-            </div>
-        </div>
         <div class="row" style="margin-top: 10px;" id="new">
 
         </div>
         
         <div class="row" style="margin-left: 240px; margin-top: 20px;" >
-            <div class="col-6">
-                <button type="button" class="btn btn-light" id="organizar">Seleccionar</button>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-light" id="result">result</button>
+            <div class="col-12">
+                <button type="button" class="btn btn-light" id="calculo">Calcular</button>
             </div>
         </div>
         <div class="row" id="result">
+
+        </div>
+    </div>
+
+    <div class="container" style="background-color: lightblue; height: 400px; width: 600px; margin-top: 100px; border-radius: 10px;">
+        <center><h1 style="color: white;">Circulo</h1></center>
+        <div class="row">
+            <div class="col-6">
+                <input class="form-control me-2" type="text" placeholder="Ingrese el color del circulo" id="colorC" style="text-align: center; margin-top: 10px;">
+            </div>
+            <div class="col-6">
+                <input class="form-control me-2" type="text" placeholder="Ingrese el radio del circulo" id="radio" style="text-align: center; margin-top: 10px;">
+            </div>
+        </div>
+        <div class="row" style="margin-left: 240px; margin-top: 20px;" >
+            <div class="col-12">
+                <button type="button" class="btn btn-light" id="calculoC">Calcular</button>
+            </div>
+        </div>
+        <div class="row" id="resultC">
+
+        </div>
+    </div>
+
+    <div class="container" style="background-color: lightblue; height: 400px; width: 600px; margin-top: 100px; border-radius: 10px;">
+        <center><h1 style="color: white;">Rectangulo</h1></center>
+        <div class="row">
+            <div class="col-4">
+                <input class="form-control me-2" type="text" placeholder="Ingrese el color del rectangulo" id="colorR" style="text-align: center; margin-top: 10px;">
+            </div>
+            <div class="col-4">
+                <input class="form-control me-2" type="text" placeholder="Ingrese el largo del rectangulo" id="largo" style="text-align: center; margin-top: 10px;">
+            </div>
+            <div class="col-4">
+                <input class="form-control me-2" type="text" placeholder="Ingrese el ancho del rectangulo" id="ancho" style="text-align: center; margin-top: 10px;">
+            </div>
+        </div>
+        <div class="row" style="margin-left: 240px; margin-top: 20px;" >
+            <div class="col-12">
+                <button type="button" class="btn btn-light" id="calculoR">Calcular</button>
+            </div>
+        </div>
+        <div class="row" id="resultR">
 
         </div>
     </div>
